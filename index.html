@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 6</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+</body>
+<script>
+      
+      try{
+        class employ {
+      constructor(id, name, salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        
+        
+      }
+    }
+    var obj1= new employ(1,"john",8000)
+    var obj2= new employ(2,"mark",7000)
+    var obj3= new employ(3,"jack",9000)
+    var arr = []
+    arr.push (obj1);
+    arr.push (obj2);
+    arr.push (obj3);
+    var js = JSON.stringify(arr);
+    var obj = JSON.parse(js);
+    var table =
+        "<table border=1><tr><th>Name</th><th>Salary</th><th>updatedsalary</th></tr>";
+      document.getElementById("p1").innerHTML = table;
+      obj.forEach(element => {
+        
+     
+      table +=
+        "<tr><td>" +
+        element.name +
+        "</td> <td >" +
+        element.salary +
+        "</td> <td >" +
+            element.salary*.15+
+            "</td></tr>";
+        });
+
+     table+= "</table>";
+      document.getElementById("p1").innerHTML = table;
+
+    }
+   catch(err){
+    document.getElementById("p2").innerHTML = err.message;
+   }
+   
+   
+</script>
+</html>
